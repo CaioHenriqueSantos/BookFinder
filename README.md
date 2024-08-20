@@ -2,10 +2,8 @@
 O BookFinder é uma aplicação desenvolvido para quem desejam explorar, favoritar livros com facilidade
 
 
-
-
-
-
+# Figma
+https://www.figma.com/design/tM9MD9WWgS6bXVZv5BnDpp/Livraria---React?node-id=0-1&t=lYNKpBUXuSAYc0Pb-0
 
 # React + Vite
 
