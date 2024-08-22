@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { fetchApi } from "../services/fetchApi"
 import Header from "../components/Header/Header"
-
+import Loading from "../components/Loading/Loading"
 import "./Home.css"
 
 function Home() {
@@ -27,7 +27,7 @@ function Home() {
         <h1 className="title">Livros</h1>
         <div>
           {!data ? (
-            <h1>Carregando...</h1>
+            <Loading />
           ) : (
             data.slice(0, moreItems).map((e, index) => (
               <div className="book-card" key={index}>
