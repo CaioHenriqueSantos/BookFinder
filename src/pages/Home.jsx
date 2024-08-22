@@ -27,7 +27,7 @@ function Home() {
       <div className="container">
         <h1 className="title">Livros</h1>
         <div>
-          {!data ? (<Loading />) : (<ListBooks data={data} moreItems={moreItems} />)}
+          {!data ? <Loading /> : <ListBooks data={data} moreItems={moreItems} />}
           {moreItems >= 48 || !data ? null : <button onClick={handleClickMore}>Ver Mais</button>}
         </div>
       </div>
