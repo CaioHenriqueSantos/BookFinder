@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { fetchApi } from "../services/fetchApi"
+import Header from "../components/Header/Header"
+
 import "./Home.css"
 
 function Home() {
@@ -20,12 +22,7 @@ function Home() {
 
   return (
     <>
-      <header>
-        <div className="topnav">
-          <input type="text" placeholder="Buscar" />
-          <i className="bi bi-heart heart-icon"></i>
-        </div>
-      </header>
+      <Header />
       <div className="container">
         <h1 className="title">Livros</h1>
         <div>
