@@ -3,15 +3,13 @@ import { fetchApi } from "../services/fetchApi"
 import "./Home.css"
 
 function Home() {
-
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
   const [moreItems, setMoreItems] = useState(4)
 
   useEffect(() => {
     const getApi = async () => {
       const res = await fetchApi()
       setData(res.results)
-      console.log(res)
     }
     getApi()
   }, [])
@@ -25,23 +23,27 @@ function Home() {
       <header>
         <div className="topnav">
           <input type="text" placeholder="Buscar" />
-          <i class="bi bi-heart heart-icon"></i>
+          <i className="bi bi-heart heart-icon"></i>
         </div>
       </header>
       <div className="container">
         <h1 className="title">Livros</h1>
         <div>
-          {data.slice(0, moreItems).map((e, index) => (
-            <div className="book-card">
-              <img src={e.thumbnail} className="book-image-placeholder" />
-              <div className="book-info">
-                <h2>{e.title}</h2>
-                <p>{e.description}</p>
-                <a href="#">Saiba Mais</a>
+          {!data ? (
+            <h1>Carregando...</h1>
+          ) : (
+            data.slice(0, moreItems).map((e, index) => (
+              <div className="book-card" key={index}>
+                <img src={e.thumbnail} className="book-image-placeholder" alt={`Thumbnail do livro ${e.title}`} />
+                <div className="book-info">
+                  <h2>{e.title}</h2>
+                  <p>{e.description}</p>
+                  <a href="#">Saiba Mais</a>
+                </div>
               </div>
-            </div>
-          ))}
-          <button onClick={handleClickMore}>Ver Mais</button>
+            ))
+          )}
+          {moreItems >= 48 || !data ? null : <button onClick={handleClickMore}>Ver Mais</button>}
         </div>
       </div>
     </>
