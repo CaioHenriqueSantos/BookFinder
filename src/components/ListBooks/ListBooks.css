@@ -1,0 +1,54 @@
+.book-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.book-image-placeholder {
+  width: 20%;
+  height: 120px;
+  object-fit: cover;
+  background-color: #ccc;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: justify;
+  flex: 1;
+}
+
+.book-info h2 {
+  font-size: 10px;
+  margin: 0 0px;
+  font-weight: bold;
+}
+
+.book-info p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.book-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  font-size: 8px;
+}
+
+.see-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.see-more a {
+  color: #007bff;
+  text-decoration: none;
+}

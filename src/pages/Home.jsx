@@ -3,6 +3,7 @@ import { fetchApi } from "../services/fetchApi"
 import Header from "../components/Header/Header"
 import Loading from "../components/Loading/Loading"
 import "./Home.css"
+import ListBooks from "../components/ListBooks/ListBooks"
 
 function Home() {
   const [data, setData] = useState(null)
@@ -26,20 +27,7 @@ function Home() {
       <div className="container">
         <h1 className="title">Livros</h1>
         <div>
-          {!data ? (
-            <Loading />
-          ) : (
-            data.slice(0, moreItems).map((e, index) => (
-              <div className="book-card" key={index}>
-                <img src={e.thumbnail} className="book-image-placeholder" alt={`Thumbnail do livro ${e.title}`} />
-                <div className="book-info">
-                  <h2>{e.title}</h2>
-                  <p>{e.description}</p>
-                  <a href="#">Saiba Mais</a>
-                </div>
-              </div>
-            ))
-          )}
+          {!data ? (<Loading />) : (<ListBooks data={data} moreItems={moreItems} />)}
           {moreItems >= 48 || !data ? null : <button onClick={handleClickMore}>Ver Mais</button>}
         </div>
       </div>
