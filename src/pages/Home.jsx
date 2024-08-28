@@ -29,7 +29,7 @@ function Home() {
         <div>
           {!data ? <Loading /> : <ListBooks data={data} moreItems={moreItems} />}
           {moreItems >= 48 || !data ? null : <button onClick={handleClickMore}>Ver Mais</button>}
-        </div>
+        </div>s
       </div>
     </>
   )
