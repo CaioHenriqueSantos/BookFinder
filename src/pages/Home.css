@@ -11,101 +11,13 @@ body {
   max-width: 44.125rem;
 }
 
-
-.topnav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 488px;
-  margin: 0 auto;
-}
-
-input[type="text"] {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: #e0e0e0;
-  color: #333;
-  font-size: 16px;
-  outline: none;
-  text-align: center;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"]::placeholder {
-  color: #555;
-}
-
-.topnav .heart-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  color: #374957;
-}
-
 .title {
   text-align: start;
   font-size: 14px;
   margin: 10px 0;
 }
 
-.book-card {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
 
-.book-image-placeholder {
-  width: 20%;
-  height: 120px;
-  object-fit: cover;
-  background-color: #ccc;
-  margin-right: 20px;
-  border-radius: 4px;
-}
-
-.book-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  text-align: justify;
-  flex: 1;
-}
-
-.book-info h2 {
-  font-size: 10px;
-  margin: 0 0px;
-  font-weight: bold;
-}
-
-.book-info p {
-  margin: 10px 0;
-  color: #666;
-}
-
-.book-info a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0 10px;
-  font-size: 8px;
-}
-
-.see-more {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.see-more a {
-  color: #007bff;
-  text-decoration: none;
-}
 
 h1,
 h2,
