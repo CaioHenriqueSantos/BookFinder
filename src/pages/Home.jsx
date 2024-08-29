@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { fetchApi } from "../services/fetchApi"
 import Header from "../components/Header/Header"
 import Loading from "../components/Loading/Loading"
 import "./Home.css"
 import ListBooks from "../components/ListBooks/ListBooks"
+import Context from "../context/Context"
 
 function Home() {
-  const [data, setData] = useState(null)
+
+  const { data, setData } = useContext(Context)
   const [moreItems, setMoreItems] = useState(4)
 
   useEffect(() => {

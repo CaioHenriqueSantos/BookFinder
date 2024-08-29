@@ -1,17 +1,17 @@
 
-import { useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import "./Header.css"
-
+import Context from "../../context/Context"
 function Header() {
 
   const [inputSearch, setInputSearch] = useState("")
-  const [data, setData] = useState()
+  const { data, setData } = useContext(Context)
 
   const handleClickSearch = async (event) => {
     event.preventDefault()
-    const req = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${inputSearch}`)
+    const req = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=livro ${inputSearch}`)
     const res = await req.json()
-    console.log(res);
+    setData(res.results)
   }
 
   return (
