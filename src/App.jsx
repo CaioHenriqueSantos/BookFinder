@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Home from "./pages/Home.jsx";
-import Search from "./pages/Search.jsx";
 import Favorites from "./pages/Favorites.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import DetailProduct from './pages/DetailProduct.jsx';
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/product/:book" element={<DetailProduct />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>

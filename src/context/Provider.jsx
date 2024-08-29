@@ -4,10 +4,13 @@ import Context from './Context';
 function Provider({ children }) {
 
   const [data, setData] = useState(null)
+  const [detail, setDetail] = useState(null)
 
   const contextValue = {
     data,
-    setData
+    setData,
+    detail,
+    setDetail
   }
 
   return (

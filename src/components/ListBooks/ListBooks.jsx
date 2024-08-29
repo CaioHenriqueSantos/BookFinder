@@ -1,6 +1,18 @@
 import "./ListBooks.css"
+import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import Context from "../../context/Context"
 
 function ListBooks({ data, moreItems }) {
+
+  const navigate = useNavigate()
+  const { setDetail } = useContext(Context)
+
+  const handelClick = (e) => {
+    setDetail(e)
+    navigate(`/product/${e.title}`)
+  }
+
   return (
     <>
       {data.slice(0, moreItems).map((e, index) => (
@@ -9,7 +21,7 @@ function ListBooks({ data, moreItems }) {
           <div className="book-info">
             <h2>{e.title}</h2>
             <p>{e.description}</p>
-            <a href="#">Saiba Mais</a>
+            <a onClick={() => handelClick(e)} >Saiba Mais</a>
           </div>
         </div>
       ))}
