@@ -5,12 +5,15 @@ function Provider({ children }) {
 
   const [data, setData] = useState(null)
   const [detail, setDetail] = useState(null)
+  const [favorites, setFavorites] = useState([])
 
   const contextValue = {
     data,
     setData,
     detail,
-    setDetail
+    setDetail,
+    favorites,
+    setFavorites
   }
 
   return (

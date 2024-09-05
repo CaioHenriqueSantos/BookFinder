@@ -20,7 +20,7 @@ function ListBooks({ data, moreItems }) {
           <img src={e.thumbnail} className="book-image-placeholder" alt={`Thumbnail do livro ${e.title}`} />
           <div className="book-info">
             <h2>{e.title}</h2>
-            <p>{e.description}</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae...</p>
             <a onClick={() => handelClick(e)} >Saiba Mais</a>
           </div>
         </div>
