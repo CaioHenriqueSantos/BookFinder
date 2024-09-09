@@ -10,7 +10,7 @@ function ListBooks({ data, moreItems }) {
 
   const handelClick = (e) => {
     setDetail(e)
-    navigate(`/product/${e.title}`)
+    navigate(`/product/${e.id}`)
   }
 
   return (
