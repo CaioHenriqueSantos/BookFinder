@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Context from './Context';
 
 function Provider({ children }) {
@@ -6,6 +6,19 @@ function Provider({ children }) {
   const [data, setData] = useState(null)
   const [detail, setDetail] = useState(null)
   const [favorites, setFavorites] = useState([])
+
+  useEffect(() => {
+    const ls = JSON.parse(localStorage.getItem('favoriteBooks'));
+
+    if (ls) {
+      setFavorites(ls)
+    }
+
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('favoriteBooks', JSON.stringify(favorites))
+  }, [favorites])
 
   const contextValue = {
     data,
