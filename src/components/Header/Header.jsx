@@ -2,10 +2,12 @@
 import { useContext, useState } from "react"
 import "./Header.css"
 import Context from "../../context/Context"
+import { useNavigate } from "react-router-dom"
 function Header() {
 
   const [inputSearch, setInputSearch] = useState("")
-  const { data, setData } = useContext(Context)
+  const { data, setData, style } = useContext(Context)
+  const navigate = useNavigate()
 
   const handleClickSearch = async (event) => {
     event.preventDefault()
@@ -13,6 +15,8 @@ function Header() {
     const res = await req.json()
     setData(res.results)
   }
+
+
 
   return (
     <header >
@@ -30,7 +34,7 @@ function Header() {
             </button>
           </div>
         </form>
-        <i className="bi bi-heart heart-icon"></i>
+        <i className={"bi bi-heart heart-icon " + style} onClick={() => navigate("/favorites")}></i>
       </div>
     </header >
   )

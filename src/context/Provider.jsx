@@ -6,6 +6,7 @@ function Provider({ children }) {
   const [data, setData] = useState(null)
   const [detail, setDetail] = useState(null)
   const [favorites, setFavorites] = useState([])
+  const [style, setStyle] = useState("")
 
   useEffect(() => {
     const ls = JSON.parse(localStorage.getItem('favoriteBooks'));
@@ -14,10 +15,21 @@ function Provider({ children }) {
       setFavorites(ls)
     }
 
+    if (ls.length > 0) {
+      setStyle("setcolor")
+    }
+
   }, [])
 
   useEffect(() => {
     localStorage.setItem('favoriteBooks', JSON.stringify(favorites))
+
+    if (favorites.length > 0) {
+      setStyle("setcolor")
+    } else {
+      setStyle("")
+    }
+
   }, [favorites])
 
   const contextValue = {
@@ -26,7 +38,9 @@ function Provider({ children }) {
     detail,
     setDetail,
     favorites,
-    setFavorites
+    setFavorites,
+    style,
+    setStyle
   }
 
   return (

@@ -2,6 +2,7 @@
 import { useContext, useEffect } from "react"
 import Context from "../context/Context"
 import Loading from "../components/Loading/Loading"
+import Header from "../components/Header/Header"
 
 
 function Favorite() {
@@ -21,6 +22,7 @@ function Favorite() {
   return (
     <>
       <div>
+        <Header />
         <h1>Favorite</h1>
         {favorites.length === 0 ? <Loading /> : favorites.map((e, index) => (
           <div>
