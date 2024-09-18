@@ -8,7 +8,7 @@ import Context from "../context/Context"
 
 function Home() {
 
-  const { data, setData } = useContext(Context)
+  const { data, setData, style } = useContext(Context)
   const [moreItems, setMoreItems] = useState(4)
 
   useEffect(() => {

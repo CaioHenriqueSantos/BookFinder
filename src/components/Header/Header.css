@@ -58,3 +58,7 @@ input[type="text"]::placeholder {
   color: #374957;
   margin-left: 10px;
 }
+
+.setcolor {
+  color: red;
+}
